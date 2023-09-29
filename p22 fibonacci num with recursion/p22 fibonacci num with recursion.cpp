@@ -4,22 +4,18 @@ using namespace std;
 
 
 
-void fibonacciSeriesOfNum( int num)
+void fibonacciSeriesOfNum( int num, int x, int y)
 {
-	static int fib = 1;
-	static int x = 0;
-	static int y = 1;
-
-	cout << fib << "    ";
+	int fib = 1;
 	
 	fib = x + y;
 	x = y;
 	y = fib;
+
+	cout << fib << "    ";
 	
 	if (num > 1)
-	{
-		fibonacciSeriesOfNum((num - 1) );
-	}
+		fibonacciSeriesOfNum(num - 1, x, y);
 
 	cout << endl;
 }
@@ -27,7 +23,7 @@ void fibonacciSeriesOfNum( int num)
 int main()
 {
 
-	fibonacciSeriesOfNum( 10);
+	fibonacciSeriesOfNum(10, 1, 0);
 
 
 	system("pause>0");
